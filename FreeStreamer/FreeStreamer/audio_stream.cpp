@@ -1583,6 +1583,7 @@ void Audio_Stream::decodeSinglePacket(CFRunLoopTimerRef timer, void *info)
         } else {
             AS_TRACE("decoder: converter run out data: bailing out\n");
             pthread_mutex_unlock(&THIS->m_packetQueueMutex);
+	    THIS->setState(BUFFERING);
         }
     } else {
         pthread_mutex_unlock(&THIS->m_streamStateMutex);
