@@ -1075,7 +1075,8 @@ void Audio_Stream::streamEndEncountered()
         return;
     }
     
-    setState(END_OF_FILE);
+    //setState(END_OF_FILE);
+	printf("END_OF_FILE");
     
     if (m_inputStream) {
         m_inputStream->close();
